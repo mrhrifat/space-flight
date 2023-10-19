@@ -41,7 +41,7 @@ const SearchFilter = () => {
               autoComplete="country-name"
               className="w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
             >
-              <option selected hidden disabled>
+              <option value="none" selected hidden disabled>
                 By Launch Status
               </option>
               <option>Successfull</option>
@@ -55,7 +55,7 @@ const SearchFilter = () => {
               autoComplete="country-name"
               className="w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
             >
-              <option selected hidden disabled>
+              <option value="none" selected hidden disabled>
                 By Launch Date
               </option>
               <option>Last week</option>
