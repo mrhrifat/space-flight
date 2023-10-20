@@ -2,10 +2,10 @@ import { useContext } from "react";
 import FlightContext from "../utils/FlightContext";
 
 const Upcoming = () => {
-  const filghtContext = useContext(FlightContext);
+  const { setUpcoming, upcoming } = useContext(FlightContext);
 
   const handleUpcoming = () => {
-    filghtContext.setUpcoming(!filghtContext.upcoming);
+    setUpcoming(!upcoming);
   };
 
   return (
@@ -15,7 +15,7 @@ const Upcoming = () => {
         name="upcomingLaunches"
         type="checkbox"
         className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-        checked={filghtContext.upcoming}
+        checked={upcoming}
         onChange={handleUpcoming}
       />
       <div className="text-sm leading-6">
