@@ -18,6 +18,8 @@ const FilterStatusDate = () => {
         return setFilter("lastMonth");
       case "lastYear":
         return setFilter("lastYear");
+      case "lastFiveYear":
+        return setFilter("lastFiveYear");
       default:
         return setFilter("all");
     }
@@ -56,6 +58,7 @@ const FilterStatusDate = () => {
           <option value="lastWeek">Last week</option>
           <option value="lastMonth">Last month</option>
           <option value="lastYear">Last year</option>
+          <option value="lastFiveYear">Last 5 year</option>
         </select>
       </div>
     </div>
