@@ -1,4 +1,5 @@
 import {
+  months,
   rocket1,
   rocket2,
   rocket3,
@@ -33,4 +34,24 @@ export const rocketImage = () => {
     default:
       return rocket1;
   }
+};
+
+export const week = () => 7 * 24 * 60 * 60 * 1000;
+
+export const month = () => 30 * 24 * 60 * 60 * 1000;
+
+export const year = () => 365 * 24 * 60 * 60 * 1000;
+
+export const isoDateToLocalDate = (date: string) => {
+  const localDate = new Date(date);
+  return `${localDate.getDay() + 1} ${
+    months[localDate.getMonth() + 1]
+  } ${localDate.getFullYear()}`;
+};
+
+export const dateTimeCalculation = (date: string) => {
+  const launchTime = new Date(date);
+  const todayTime = new Date();
+  const timeDifference = Number(todayTime) - Number(launchTime);
+  return timeDifference;
 };
