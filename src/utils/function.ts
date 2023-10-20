@@ -42,6 +42,8 @@ export const month = () => 30 * 24 * 60 * 60 * 1000;
 
 export const year = () => 365 * 24 * 60 * 60 * 1000;
 
+export const fiveYears = () => 1825 * 24 * 60 * 60 * 1000;
+
 export const isoDateToLocalDate = (date: string) => {
   const localDate = new Date(date);
   return `${localDate.getDay() + 1} ${
