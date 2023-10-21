@@ -31,8 +31,6 @@ export const Root = () => {
   let totalItems = currentData.length;
   const navigate = useNavigate();
 
-  console.log(!param.id);
-
   // Filter Current Data with Filter Type & Return Filtered Data, Total Items Length
   const filterData = (filterType: string) => {
     let filteredData;
