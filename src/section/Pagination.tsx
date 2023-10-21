@@ -45,9 +45,9 @@ const Pagination = () => {
   };
 
   // If Current Page is 0 & Total Pages Count is 1, than not show Pagination
-  // if (currentPage === 0 || totalPages === 1) {
-  //   return null;
-  // }
+  if (currentPage === 0 || totalPages === 1) {
+    return null;
+  }
 
   return (
     <div className="mt-12">
@@ -57,7 +57,7 @@ const Pagination = () => {
           aria-label="Pagination"
         >
           {/* Previous Page Link */}
-          {currentPage > 1 && (
+          {currentPage > 0 && (
             <Link
               to={`/${currentPage - 1}`}
               className="rounded-l-md px-2 py-2 text-gray-500 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
