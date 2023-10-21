@@ -129,7 +129,6 @@ export const Root = () => {
         filter,
         setFilter,
         itemsPerpage,
-        // totalPages,
         startIndex,
         endIndex,
         itemToDisplay,
