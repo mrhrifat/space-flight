@@ -71,18 +71,18 @@ const Pagination = () => {
           {paginationRange?.map((pageNumber) => {
             // If Page Number Range is Equal to Dots Than Show Dots
             if (pageNumber === DOTS) {
-              return <span key={Math.random()}>&#8230;</span>;
+              return <span key={"."}>&#8230;</span>;
             }
             return (
               <Link
                 key={pageNumber}
                 to={`/${pageNumber}`}
                 className={`px-4 py-2 text-sm font-semibold text-slate-800  ring-inset right-1 ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 ${
-                  Number(pageNumber) === Number(param.id)
+                  +pageNumber === +param.id!
                     ? "bg-indigo-500 text-white hover:bg-indigo-500"
                     : "bg-slate-100 ring-1"
                 }`}
-                onClick={() => handlePageChange(Number(pageNumber))}
+                onClick={() => handlePageChange(+pageNumber)}
               >
                 {pageNumber}
               </Link>
