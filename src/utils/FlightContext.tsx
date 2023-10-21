@@ -107,7 +107,8 @@ export const Root = () => {
       console.log("Fetching error", err);
     }
   };
-
+  console.log(import.meta.env.VITE_BASE_URL);
+  console.log(process.env.VITE_BASE_URL);
   // Data Fetching Launches & Upcoming
   useEffect(() => {
     // Fetch All Launches & If Upcoming True Fetch Upcoming
