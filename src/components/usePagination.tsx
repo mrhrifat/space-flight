@@ -39,14 +39,14 @@ const usePagination = () => {
 
     // Not Left Side Dots But Right Dots To Show
     if (!showLeftDots && showRightDots) {
-      const leftItemCount = 3 + 2 + sibling;
+      const leftItemCount = 2 + 2 + sibling;
       const leftRange = range(1, leftItemCount);
       return [...leftRange, DOTS, totalPages];
     }
 
     // Not Right Side Dots But Left Dots To Show
     if (showLeftDots && !showRightDots) {
-      const rightItemCount = 3 + 2 * sibling;
+      const rightItemCount = 2 + 2 * sibling;
       const rightRange = range(totalPages - rightItemCount + 1, totalPages);
 
       return [firstPageIndex, DOTS, ...rightRange];
