@@ -1,6 +1,14 @@
-import Upcoming from "../components/Upcoming";
-import FilterStatusDate from "../components/FilterStatusDate";
-import Search from "../components/Search";
+/**
+ * Title: SearchAndFilter
+ * Description:
+ * Filename: SearchAndFilter.tsx
+ * Path: /src/section/SearchAndFilter.tsx
+ * Author: Mrh Rifat (Programmer)
+ * Date: Oct 21, 2023
+ *
+ */
+
+import { Upcoming, FilterStatusDate, Search } from "../components/";
 
 const SearchAndFilter = () => {
   return (
