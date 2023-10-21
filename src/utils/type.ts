@@ -185,7 +185,5 @@ export type FlightContextType = {
   filter: string;
   setFilter: Dispatch<SetStateAction<string>>;
   itemsPerpage: number;
-  startIndex: number;
-  endIndex: number;
   itemToDisplay: LaunchesDataType;
 };
