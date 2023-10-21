@@ -57,7 +57,7 @@ const Pagination = () => {
           aria-label="Pagination"
         >
           {/* Previous Page Link */}
-          {currentPage > 0 && (
+          {currentPage > 1 && (
             <Link
               to={`/${currentPage - 1}`}
               className="rounded-l-md px-2 py-2 text-gray-500 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
@@ -85,7 +85,7 @@ const Pagination = () => {
                 key={pageNumber}
                 to={`/${pageNumber}`}
                 className={`px-4 py-2 text-sm font-semibold text-slate-800  ring-inset right-1 ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 ${
-                  pageNumber === param.id!
+                  pageNumber === Number(param.id)
                     ? "bg-indigo-500 text-white hover:bg-indigo-500"
                     : "bg-slate-100 ring-1"
                 }`}
