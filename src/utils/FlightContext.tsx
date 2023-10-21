@@ -10,7 +10,7 @@
 
 import { createContext, useEffect, useState } from "react";
 import { FlightContextType, LaunchDataType } from "./type";
-import { baseUrl, defaultValue } from "./data";
+import { defaultValue } from "./data";
 import App from "../App";
 import { dateTimeCalculation, fiveYears, month, week, year } from "./function";
 import { useNavigate, useParams } from "react-router-dom";
@@ -30,6 +30,7 @@ export const Root = () => {
   const endIndex = startIndex + itemsPerpage;
   let totalItems = currentData.length;
   const navigate = useNavigate();
+
   // Filter Current Data with Filter Type & Return Filtered Data, Total Items Length
   const filterData = (filterType: string) => {
     let filteredData;
@@ -111,8 +112,8 @@ export const Root = () => {
   useEffect(() => {
     // Fetch All Launches & If Upcoming True Fetch Upcoming
     upcoming !== true
-      ? getLaunches(baseUrl)
-      : getLaunches(`${baseUrl}/upcoming`);
+      ? getLaunches(import.meta.env.BASE_URL)
+      : getLaunches(`${import.meta.env.BASE_URL}/upcoming`);
 
     // Default Navigate To Page 1
     navigate("/1");
