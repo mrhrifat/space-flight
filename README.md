@@ -21,11 +21,13 @@
   - Rocket Name (Ex: Falcon 1)
 - Amazing Pagination
 - 100% Accessibility, SEO & Best Practices
+- Params pagination
 
 ## Bugs & Issues
 
 - Some FCP, LCP Issue (Sovled soon)
 - 65%+ Performace
+- Params pagination doesn't work on server but local prodcution
 
 ## Development & Testing
 
