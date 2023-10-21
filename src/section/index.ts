@@ -1,3 +1,13 @@
+/**
+ * Title: index
+ * Description:
+ * Filename: index.ts
+ * Path: /src/section/index.ts
+ * Author: Mrh Rifat (Programmer)
+ * Date: Oct 21, 2023
+ *
+ */
+
 import Error from "./Error";
 import FlightDetails from "./FlightDetails";
 import Footer from "./Footer";

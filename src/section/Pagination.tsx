@@ -1,3 +1,13 @@
+/**
+ * Title: Pagination
+ * Description:
+ * Filename: Pagination.tsx
+ * Path: /src/section/Pagination.tsx
+ * Author: Mrh Rifat (Programmer)
+ * Date: Oct 19, 2023
+ *
+ */
+
 import { useContext } from "react";
 import FlightContext from "../utils/FlightContext";
 import { Link, useParams } from "react-router-dom";

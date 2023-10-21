@@ -1,3 +1,13 @@
+/**
+ * Title: Footer
+ * Description:
+ * Filename: Footer.tsx
+ * Path: /src/section/Footer.tsx
+ * Author: Mrh Rifat (Programmer)
+ * Date: Oct 19, 2023
+ *
+ */
+
 const Footer = () => {
   return (
     <div className="text-center">

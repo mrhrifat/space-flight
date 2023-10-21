@@ -1,3 +1,13 @@
+/**
+ * Title: Header
+ * Description:
+ * Filename: Header.tsx
+ * Path: /src/section/Header.tsx
+ * Author: Mrh Rifat (Programmer)
+ * Date: Oct 19, 2023
+ *
+ */
+
 const Header = () => {
   return (
     <div className="mt-28 text-center">

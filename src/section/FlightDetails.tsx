@@ -1,3 +1,13 @@
+/**
+ * Title: FlightDetails
+ * Description:
+ * Filename: FlightDetails.tsx
+ * Path: /src/section/FlightDetails.tsx
+ * Author: Mrh Rifat (Programmer)
+ * Date: Oct 19, 2023
+ *
+ */
+
 import { useContext } from "react";
 import { Details } from "../components/";
 import FlightContext from "../utils/FlightContext";
