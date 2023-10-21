@@ -112,8 +112,18 @@ export const Root = () => {
   useEffect(() => {
     // Fetch All Launches & If Upcoming True Fetch Upcoming
     upcoming !== true
-      ? getLaunches(import.meta.env.VITE_BASE_URL_LN)
-      : getLaunches(`${import.meta.env.VITE_BASE_URL_LN}/upcoming`);
+      ? getLaunches(
+          import.meta.env.DEV === true
+            ? import.meta.env.VITE_BASE_URL
+            : process.env.VITE_BASE_URL
+        )
+      : getLaunches(
+          `${
+            import.meta.env.DEV === true
+              ? import.meta.env.VITE_BASE_URL
+              : process.env.VITE_BASE_URL
+          }/upcoming`
+        );
 
     // Default Navigate To Page 1
     if (!param.id) {
