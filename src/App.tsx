@@ -1,5 +1,6 @@
 import { Suspense, lazy } from "react";
-import { Footer, Loading } from "./section";
+import { Loading } from "./section";
+const Footer = lazy(() => import("./section/Footer"));
 const Header = lazy(() => import("./section/Header"));
 const FlightDetails = lazy(() => import("./section/FlightDetails"));
 const SearchAndFilter = lazy(() => import("./section/SearchAndFilter"));
@@ -28,9 +29,11 @@ const App = () => {
           <Pagination />
         </div>
       </Suspense>
-      <footer>
-        <Footer />
-      </footer>
+      <Suspense fallback={<Loading />}>
+        <footer>
+          <Footer />
+        </footer>
+      </Suspense>
     </main>
   );
 };
