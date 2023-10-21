@@ -13,7 +13,7 @@ import { FlightContextType, LaunchDataType } from "./type";
 import { baseUrl, defaultValue } from "./data";
 import App from "../App";
 import { dateTimeCalculation, fiveYears, month, week, year } from "./function";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 //  Flight Context Creation
 const FlightContext = createContext<FlightContextType>(defaultValue);
@@ -29,7 +29,7 @@ export const Root = () => {
   const startIndex = (Number(param.id) - 1) * itemsPerpage;
   const endIndex = startIndex + itemsPerpage;
   let totalItems = currentData.length;
-
+  const navigate = useNavigate();
   // Filter Current Data with Filter Type & Return Filtered Data, Total Items Length
   const filterData = (filterType: string) => {
     let filteredData;
@@ -109,10 +109,14 @@ export const Root = () => {
 
   // Data Fetching Launches & Upcoming
   useEffect(() => {
+    // Fetch All Launches & If Upcoming True Fetch Upcoming
     upcoming !== true
       ? getLaunches(baseUrl)
       : getLaunches(`${baseUrl}/upcoming`);
-  }, [upcoming]);
+
+    // Default Navigate To Page 1
+    navigate("/1");
+  }, [upcoming, navigate]);
 
   return (
     <FlightContext.Provider
