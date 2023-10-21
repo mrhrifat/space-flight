@@ -11,6 +11,8 @@ const Search = () => {
 
   return (
     <div className="max-lg:col-span-2">
+      {/* Search Query By Rocket Name */}
+
       <div className="rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
         <input
           type="text"
