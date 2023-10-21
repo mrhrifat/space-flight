@@ -50,64 +50,59 @@ const Pagination = () => {
   }
 
   return (
-    <div className="mt-12">
-      <div className="flex flex-1 items-center justify-center">
-        <nav
-          className="flex -space-x-px rounded-md shadow-sm"
-          aria-label="Pagination"
-        >
-          {/* Previous Page Link */}
-          {currentPage > 1 && (
-            <Link
-              to={`/${currentPage - 1}`}
-              className="rounded-l-md px-2 py-2 text-gray-500 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-              onClick={handlePrev}
-            >
-              Prev
-            </Link>
-          )}
+    <div className="flex flex-1 items-center justify-center mt-12">
+      <nav className="flex rounded-md shadow-sm" aria-label="Pagination">
+        {/* Previous Page Link */}
+        {currentPage > 1 && (
+          <Link
+            to={`/${currentPage - 1}`}
+            className="rounded-l-md p-2 text-gray-500 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+            onClick={handlePrev}
+          >
+            Prev
+          </Link>
+        )}
 
-          {/* N Number of Pagination Page Link */}
-          {paginationRange?.map((pageNumber) => {
-            // If Page Number Range is Equal to Dots Than Show Dots
-            if (pageNumber === DOTS) {
-              return (
-                <span
-                  key={Math.random()}
-                  className="max-sm:hidden px-4 py-2 text-sm font-semibold text-gray-500 bg-slate-100 ring-1 ring-inset right-1 ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-                >
-                  &#8230;
-                </span>
-              );
-            }
+        {/* N Number of Pagination Page Link */}
+        {paginationRange?.map((pageNumber) => {
+          // If Page Number Range is Equal to Dots Than Show Dots
+          if (pageNumber === DOTS) {
             return (
-              <Link
-                key={pageNumber}
-                to={`/${pageNumber}`}
-                className={`max-[350px]:hidden  px-4 py-2 text-sm font-semibold text-slate-800  ring-inset right-1 ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 ${
-                  pageNumber === Number(param.id)
-                    ? "bg-indigo-500 text-white hover:bg-indigo-500"
-                    : "bg-slate-100 ring-1"
-                }`}
-                onClick={() => handlePageChange(Number(pageNumber))}
+              <span
+                key={Math.random()}
+                className="max-sm:hidden p-2 text-sm font-semibold text-gray-500 bg-slate-100 ring-1 ring-inset right-1 ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
               >
-                {pageNumber}
-              </Link>
+                &#8230;
+              </span>
             );
-          })}
-
-          {/* Next Page Link */}
-          {currentPage < totalPages && (
+          }
+          return (
             <Link
-              to={`/${currentPage + 1}`}
-              className="rounded-r-md px-2 py-2 text-gray-500 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-              onClick={handleNext}
+              key={pageNumber}
+              to={`/${pageNumber}`}
+              className={`max-[400px]:hidden  p-3 text-sm font-semibold text-slate-800  ring-inset right-1 ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 ${
+                pageNumber === Number(param.id)
+                  ? "bg-indigo-500 text-white hover:bg-indigo-500"
+                  : "bg-slate-100 ring-1"
+              }`}
+              onClick={() => handlePageChange(Number(pageNumber))}
             >
-              Next
+              {pageNumber}
             </Link>
-          )}
-        </nav>
-      </div>
+          );
+        })}
+
+        {/* Next Page Link */}
+        {currentPage < totalPages && (
+          <Link
+            to={`/${currentPage + 1}`}
+            className="rounded-r-md p-2 text-gray-500 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+            onClick={handleNext}
+          >
+            Next
+          </Link>
+        )}
+      </nav>
     </div>
   );
 };
