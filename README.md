@@ -39,18 +39,18 @@ If you are exiting & see how it works in local development machine
 
 ```
   VITE v4.5.0  ready in 141 ms
-  ➜  Local:   http://localhost:5173/
+  ➜  Local:   http://localhost:5173
   ➜  Network: use --host to expose
   ➜  press h to show help
 
 ```
 
-- Go to port http://localhost:5173/1
+- Go to port http://localhost:5173
 - Enjoy!
 
 ```
 git clone https://github.com/mrhrifat/space-flight.git
 yarn install
 yarn dev
-http://localhost:5173/1
+http://localhost:5173
 ```
