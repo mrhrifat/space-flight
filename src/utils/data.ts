@@ -69,3 +69,15 @@ export const defaultValue = {
   endIndex: 1,
   itemToDisplay: [],
 };
+
+// One Weeks in Millisecond
+export const week = 604800000;
+
+// One Month in Millisecond
+export const month = 2592000000;
+
+// One Year in Millisecond
+export const year = 31536000000;
+
+// Five Years in Millisecond
+export const fiveYear = 157680000000;
