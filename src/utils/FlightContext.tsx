@@ -10,9 +10,9 @@
 
 import { createContext, useEffect, useState } from "react";
 import { FlightContextType, LaunchDataType } from "./type";
-import { defaultValue } from "./data";
+import { defaultValue, fiveYears, month, week, year } from "./data";
 import App from "../App";
-import { dateTimeCalculation, fiveYears, month, week, year } from "./function";
+import { dateTimeCalculation } from "./function";
 import { useNavigate, useParams } from "react-router-dom";
 
 //  Flight Context Creation
@@ -21,7 +21,7 @@ const FlightContext = createContext<FlightContextType>(defaultValue);
 export const Root = () => {
   const param = useParams();
   const [currentData, setCurrentData] = useState([]);
-  const [currentPage, setCurrentPage] = useState(Number(param.id));
+  const [currentPage, setCurrentPage] = useState(Number(param.id) | 1);
   const [upcoming, setUpcoming] = useState(false);
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState("all");
@@ -61,28 +61,28 @@ export const Root = () => {
       case "lastWeek":
         filteredData = currentData.filter(
           (item: LaunchDataType) =>
-            dateTimeCalculation(item.launch_date_local) <= week()
+            dateTimeCalculation(item.launch_date_local) <= week
         );
         totalItems = filteredData.length;
         break;
       case "lastMonth":
         filteredData = currentData.filter(
           (item: LaunchDataType) =>
-            dateTimeCalculation(item.launch_date_local) <= month()
+            dateTimeCalculation(item.launch_date_local) <= month
         );
         totalItems = filteredData.length;
         break;
       case "lastYear":
         filteredData = currentData.filter(
           (item: LaunchDataType) =>
-            dateTimeCalculation(item.launch_date_local) <= year()
+            dateTimeCalculation(item.launch_date_local) <= year
         );
         totalItems = filteredData.length;
         break;
       case "lastFiveYear":
         filteredData = currentData.filter(
           (item: LaunchDataType) =>
-            dateTimeCalculation(item.launch_date_local) <= fiveYears()
+            dateTimeCalculation(item.launch_date_local) <= fiveYears
         );
         totalItems = filteredData.length;
         break;
@@ -134,8 +134,6 @@ export const Root = () => {
         filter,
         setFilter,
         itemsPerpage,
-        startIndex,
-        endIndex,
         itemToDisplay,
       }}
     >
