@@ -1,3 +1,13 @@
+/**
+ * Title: Search
+ * Description:
+ * Filename: Search.tsx
+ * Path: /src/components/Search.tsx
+ * Author: Mrh Rifat (Programmer)
+ * Date: Oct 20, 2023
+ *
+ */
+
 import { ChangeEvent, useContext } from "react";
 import FlightContext from "../utils/FlightContext";
 

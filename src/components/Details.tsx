@@ -1,3 +1,13 @@
+/**
+ * Title: Details
+ * Description:
+ * Filename: Details.tsx
+ * Path: /src/components/Details.tsx
+ * Author: Mrh Rifat (Programmer)
+ * Date: Oct 19, 2023
+ *
+ */
+
 import { isoDateToLocalDate, rocketImage } from "../utils/function";
 import { LaunchDataType } from "../utils/type";
 

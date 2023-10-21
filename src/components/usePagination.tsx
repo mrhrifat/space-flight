@@ -1,3 +1,13 @@
+/**
+ * Title: usePagination
+ * Description:
+ * Filename: usePagination.tsx
+ * Path: /src/components/usePagination.tsx
+ * Author: Mrh Rifat (Programmer)
+ * Date: Oct 21, 2023
+ *
+ */
+
 import { useContext, useMemo } from "react";
 import FlightContext from "../utils/FlightContext";
 import { range } from "../utils/function";
