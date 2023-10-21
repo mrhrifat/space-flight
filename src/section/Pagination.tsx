@@ -44,6 +44,11 @@ const Pagination = () => {
     setCurrentPage(pageNumber);
   };
 
+  // If Current Page is 0 & Total Pages Count is 1, than not show Pagination
+  if (currentPage === 0 || totalPages === 1) {
+    return null;
+  }
+
   return (
     <div className="mt-12">
       <div className="flex flex-1 items-center justify-center">
@@ -80,11 +85,11 @@ const Pagination = () => {
                 key={pageNumber}
                 to={`/${pageNumber}`}
                 className={`px-4 py-2 text-sm font-semibold text-slate-800  ring-inset right-1 ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 ${
-                  +pageNumber === +param.id!
+                  pageNumber === param.id!
                     ? "bg-indigo-500 text-white hover:bg-indigo-500"
                     : "bg-slate-100 ring-1"
                 }`}
-                onClick={() => handlePageChange(+pageNumber)}
+                onClick={() => handlePageChange(Number(pageNumber))}
               >
                 {pageNumber}
               </Link>
