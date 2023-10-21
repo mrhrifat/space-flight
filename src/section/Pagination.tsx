@@ -44,11 +44,6 @@ const Pagination = () => {
     setCurrentPage(pageNumber);
   };
 
-  // If Current Page is 0 & Total Pages Count is 1, than not show Pagination
-  if (currentPage === 0 || totalPages === 1) {
-    return null;
-  }
-
   return (
     <div className="mt-12">
       <div className="flex flex-1 items-center justify-center">
