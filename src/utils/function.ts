@@ -70,7 +70,7 @@ export const isoDateToLocalDate = (date: string) => {
 export const dateTimeCalculation = (date: string) => {
   const launchTime = new Date(date);
   const todayTime = new Date();
-  const timeDifference = Number(todayTime) - Number(launchTime);
+  const timeDifference = +todayTime - +launchTime;
   return timeDifference;
 };
 
