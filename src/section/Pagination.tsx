@@ -45,9 +45,9 @@ const Pagination = () => {
   };
 
   // If Current Page is 0 & Total Pages Count is 1, than not show Pagination
-  if (currentPage === 0 || totalPages === 1) {
-    return null;
-  }
+  // if (currentPage === 0 || totalPages === 1) {
+  //   return null;
+  // }
 
   return (
     <div className="mt-12">
