@@ -107,24 +107,13 @@ export const Root = () => {
       console.log("Fetching error", err);
     }
   };
-  console.log(import.meta.env.VITE_BASE_URL);
-  console.log(process.env.VITE_BASE_URL);
+
   // Data Fetching Launches & Upcoming
   useEffect(() => {
     // Fetch All Launches & If Upcoming True Fetch Upcoming
     upcoming !== true
-      ? getLaunches(
-          import.meta.env.DEV === true
-            ? import.meta.env.VITE_BASE_URL
-            : process.env.VITE_BASE_URL
-        )
-      : getLaunches(
-          `${
-            import.meta.env.DEV === true
-              ? import.meta.env.VITE_BASE_URL
-              : process.env.VITE_BASE_URL
-          }/upcoming`
-        );
+      ? getLaunches(import.meta.env.VITE_BASE_URL)
+      : getLaunches(`${import.meta.env.VITE_BASE_URL}/upcoming`);
 
     // Default Navigate To Page 1
     if (!param.id) {
