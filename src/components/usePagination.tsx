@@ -9,20 +9,17 @@
  */
 
 import { useContext, useMemo } from "react";
+import { DOTS } from "../utils/data";
 import FlightContext from "../utils/FlightContext";
 import { range } from "../utils/function";
-import { DOTS } from "../utils/data";
 
 const usePagination = () => {
   const { currentPage, totalItems, itemsPerpage } = useContext(FlightContext);
-  const sibling = 1;
-
-  // Total Pages Count
-  const totalPages = Math.ceil(totalItems / itemsPerpage);
-
   // Pagination Range To Show on Pagination
   const paginationRange = useMemo(() => {
-    const totalPageNumbers = sibling + 5;
+    const sibling = 1;
+    const totalPages = Math.ceil(totalItems / itemsPerpage);
+    const totalPageNumbers = sibling + 4;
 
     if (totalPageNumbers >= totalPages) {
       return range(1, totalPages);
@@ -61,7 +58,7 @@ const usePagination = () => {
 
       return [firstPageIndex, DOTS, ...middleRange, DOTS, lastPageIndex];
     }
-  }, [currentPage, totalPages, sibling]);
+  }, [currentPage, totalItems, itemsPerpage]);
 
   return paginationRange;
 };
