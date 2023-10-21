@@ -46,18 +46,6 @@ export const rocketImage = () => {
   }
 };
 
-// One Weeks in Millisecond
-export const week = () => 7 * 24 * 60 * 60 * 1000;
-
-// One Month in Millisecond
-export const month = () => 30 * 24 * 60 * 60 * 1000;
-
-// One Year in Millisecond
-export const year = () => 365 * 24 * 60 * 60 * 1000;
-
-// Five Years in Millisecond
-export const fiveYears = () => 1825 * 24 * 60 * 60 * 1000;
-
 // Convert ISO Date Time To Local Date
 export const isoDateToLocalDate = (date: string) => {
   const localDate = new Date(date);
