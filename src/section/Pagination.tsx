@@ -74,7 +74,7 @@ const Pagination = () => {
               return (
                 <span
                   key={Math.random()}
-                  className="px-4 py-2 text-sm font-semibold text-gray-500 bg-slate-100 ring-1 ring-inset right-1 ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+                  className="max-sm:hidden px-4 py-2 text-sm font-semibold text-gray-500 bg-slate-100 ring-1 ring-inset right-1 ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
                 >
                   &#8230;
                 </span>
@@ -84,7 +84,7 @@ const Pagination = () => {
               <Link
                 key={pageNumber}
                 to={`/${pageNumber}`}
-                className={`px-4 py-2 text-sm font-semibold text-slate-800  ring-inset right-1 ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 ${
+                className={`max-[350px]:hidden  px-4 py-2 text-sm font-semibold text-slate-800  ring-inset right-1 ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 ${
                   pageNumber === Number(param.id)
                     ? "bg-indigo-500 text-white hover:bg-indigo-500"
                     : "bg-slate-100 ring-1"
