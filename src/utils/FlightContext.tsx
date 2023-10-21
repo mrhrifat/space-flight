@@ -21,12 +21,12 @@ const FlightContext = createContext<FlightContextType>(defaultValue);
 export const Root = () => {
   const param = useParams();
   const [currentData, setCurrentData] = useState([]);
-  const [currentPage, setCurrentPage] = useState(+param.id!);
+  const [currentPage, setCurrentPage] = useState(Number(param.id));
   const [upcoming, setUpcoming] = useState(false);
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState("all");
   const itemsPerpage = 9;
-  const startIndex = (+param.id! - 1) * itemsPerpage;
+  const startIndex = (Number(param.id) - 1) * itemsPerpage;
   const endIndex = startIndex + itemsPerpage;
   let totalItems = currentData.length;
   const navigate = useNavigate();
