@@ -12,14 +12,15 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { Error } from "./section/";
+import { Error, FlightDetails } from "./section/";
 import { Root } from "./utils/FlightContext.tsx";
 
 const router = createBrowserRouter([
   {
-    path: "/:id",
+    path: "/",
     element: <Root />,
     errorElement: <Error />,
+    children: [{ path: "/:id", element: <FlightDetails /> }],
   },
 ]);
 
