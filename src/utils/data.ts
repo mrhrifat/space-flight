@@ -80,4 +80,4 @@ export const month = 2592000000;
 export const year = 31536000000;
 
 // Five Years in Millisecond
-export const fiveYear = 157680000000;
+export const fiveYears = 157680000000;
