@@ -9,31 +9,31 @@ const Pagination = lazy(() => import("./section/Pagination"));
 const App = () => {
   return (
     <main className="container mx-auto max-sm:px-10">
-      <Suspense fallback={<Loading />}>
-        <header>
+      <header>
+        <Suspense fallback={<Loading />}>
           <Header />
-        </header>
-      </Suspense>
-      <Suspense fallback={<Loading />}>
-        <div>
+        </Suspense>
+      </header>
+      <div>
+        <Suspense fallback={<Loading />}>
           <SearchAndFilter />
-        </div>
-      </Suspense>
-      <Suspense fallback={<Loading />}>
-        <div>
+        </Suspense>
+      </div>
+      <div>
+        <Suspense fallback={<Loading />}>
           <FlightDetails />
-        </div>
-      </Suspense>
-      <Suspense fallback={<Loading />}>
-        <div>
+        </Suspense>
+      </div>
+      <div>
+        <Suspense fallback={<Loading />}>
           <Pagination />
-        </div>
-      </Suspense>
-      <Suspense fallback={<Loading />}>
-        <footer>
+        </Suspense>
+      </div>
+      <footer>
+        <Suspense fallback={<Loading />}>
           <Footer />
-        </footer>
-      </Suspense>
+        </Suspense>
+      </footer>
     </main>
   );
 };
