@@ -1,3 +1,13 @@
+/**
+ * Title: function
+ * Description:
+ * Filename: function.ts
+ * Path: /src/utils/function.ts
+ * Author: Mrh Rifat (Programmer)
+ * Date: Oct 20, 2023
+ *
+ */
+
 import {
   months,
   rocket1,
@@ -36,14 +46,19 @@ export const rocketImage = () => {
   }
 };
 
+// One Weeks in Millisecond
 export const week = () => 7 * 24 * 60 * 60 * 1000;
 
+// One Month in Millisecond
 export const month = () => 30 * 24 * 60 * 60 * 1000;
 
+// One Year in Millisecond
 export const year = () => 365 * 24 * 60 * 60 * 1000;
 
+// Five Years in Millisecond
 export const fiveYears = () => 1825 * 24 * 60 * 60 * 1000;
 
+// Convert ISO Date Time To Local Date
 export const isoDateToLocalDate = (date: string) => {
   const localDate = new Date(date);
   return `${localDate.getDay() + 1} ${
@@ -51,9 +66,16 @@ export const isoDateToLocalDate = (date: string) => {
   } ${localDate.getFullYear()}`;
 };
 
+// Calculate Difference Between ISO Date Time & Local Date
 export const dateTimeCalculation = (date: string) => {
   const launchTime = new Date(date);
   const todayTime = new Date();
   const timeDifference = Number(todayTime) - Number(launchTime);
   return timeDifference;
+};
+
+// Pagination Range
+export const range = (start: number, end: number) => {
+  const length = end - start + 1;
+  return Array.from({ length }, (_, id) => id + start);
 };
