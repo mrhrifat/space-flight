@@ -1,24 +1,33 @@
-import FlightDetails from "./section/FlightDetails";
+import { Suspense, lazy } from "react";
 import Footer from "./section/Footer";
-import Header from "./section/Header";
-import Pagination from "./section/Pagination";
-import SearchAndFilter from "./section/SearchAndFilter";
+const Header = lazy(() => import("./section/Header"));
+const FlightDetails = lazy(() => import("./section/FlightDetails"));
+const SearchAndFilter = lazy(() => import("./section/SearchAndFilter"));
+const Pagination = lazy(() => import("./section/Pagination"));
 
 const App = () => {
   return (
     <main className="container mx-auto max-sm:px-10">
-      <header>
-        <Header />
-      </header>
-      <div>
-        <SearchAndFilter />
-      </div>
-      <div>
-        <FlightDetails />
-      </div>
-      <div>
-        <Pagination />
-      </div>
+      <Suspense fallback={"Loading"}>
+        <header>
+          <Header />
+        </header>
+      </Suspense>
+      <Suspense fallback={"Loading"}>
+        <div>
+          <SearchAndFilter />
+        </div>
+      </Suspense>
+      <Suspense fallback={"Loading"}>
+        <div>
+          <FlightDetails />
+        </div>
+      </Suspense>
+      <Suspense fallback={"Loading"}>
+        <div>
+          <Pagination />
+        </div>
+      </Suspense>
       <footer>
         <Footer />
       </footer>
