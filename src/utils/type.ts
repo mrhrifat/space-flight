@@ -1,3 +1,16 @@
+/**
+ * Title: type
+ * Description:
+ * Filename: type.ts
+ * Path: /src/utils/type.ts
+ * Author: Mrh Rifat (Programmer)
+ * Date: Oct 21, 2023
+ *
+ */
+
+import { Dispatch, SetStateAction } from "react";
+
+// Launch Data Type Object
 export type LaunchDataType = {
   flight_number: number;
   mission_name: string;
@@ -154,4 +167,25 @@ export type LaunchDataType = {
   };
   crew: null;
 };
+
+// Launches Data Type Array
 export type LaunchesDataType = LaunchDataType[];
+
+// Flight Context Type
+export type FlightContextType = {
+  currentData: LaunchesDataType;
+  setCurrentData: Dispatch<SetStateAction<never[]>>;
+  currentPage: number;
+  setCurrentPage: Dispatch<SetStateAction<number>>;
+  totalItems: number;
+  upcoming: boolean;
+  setUpcoming: Dispatch<SetStateAction<boolean>>;
+  query: string;
+  setQuery: Dispatch<SetStateAction<string>>;
+  filter: string;
+  setFilter: Dispatch<SetStateAction<string>>;
+  itemsPerpage: number;
+  startIndex: number;
+  endIndex: number;
+  itemToDisplay: LaunchesDataType;
+};
