@@ -112,8 +112,8 @@ export const Root = () => {
   useEffect(() => {
     // Fetch All Launches & If Upcoming True Fetch Upcoming
     upcoming !== true
-      ? getLaunches(import.meta.env.BASE_URL)
-      : getLaunches(`${import.meta.env.BASE_URL}/upcoming`);
+      ? getLaunches(import.meta.env.VITE_BASE_URL)
+      : getLaunches(`${import.meta.env.VITE_BASE_URL}/upcoming`);
 
     // Default Navigate To Page 1
     navigate("/1");
