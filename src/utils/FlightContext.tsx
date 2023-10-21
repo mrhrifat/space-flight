@@ -31,6 +31,8 @@ export const Root = () => {
   let totalItems = currentData.length;
   const navigate = useNavigate();
 
+  console.log(!param.id);
+
   // Filter Current Data with Filter Type & Return Filtered Data, Total Items Length
   const filterData = (filterType: string) => {
     let filteredData;
@@ -116,8 +118,10 @@ export const Root = () => {
       : getLaunches(`${import.meta.env.VITE_BASE_URL}/upcoming`);
 
     // Default Navigate To Page 1
-    navigate("/1");
-  }, [upcoming, navigate]);
+    if (!param.id) {
+      navigate("/1");
+    }
+  }, [upcoming, param.id, navigate]);
 
   return (
     <FlightContext.Provider
